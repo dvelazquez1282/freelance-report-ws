@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace DVelazquez\Timing\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -23,6 +23,6 @@ class TimingServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
     }
 }
