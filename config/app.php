@@ -178,7 +178,7 @@ return [
         /**
          * Module Service Provider
          */
-        Dvelazquez\Timing\Providers\TimingServiceProvider::class,
+        DVelazquez\Timing\Providers\TimingServiceProvider::class,
 
     ],
 
