@@ -5,6 +5,7 @@ namespace DVelazquez\Timing\Http\Controllers;
 use App\Http\Controllers\Controller;
 use DVelazquez\Timing\Http\Requests\StoreTimingFormRequest;
 use DVelazquez\Timing\Http\Requests\UpdateTimingFormRequest;
+use DVelazquez\Timing\Http\Resources\TimingCollection;
 use DVelazquez\Timing\Http\Resources\TimingResource;
 use DVelazquez\Timing\Models\Timing;
 use Illuminate\Http\Request;
@@ -18,7 +19,7 @@ class TimingController extends Controller
     }
     public function list() {
         $timings = Timing::all();    
-        $resource = TimingResource::collection($timings);
+        $resource = new TimingCollection($timings);
         return response()->json($resource);
     }
     public function store(StoreTimingFormRequest $request) {
