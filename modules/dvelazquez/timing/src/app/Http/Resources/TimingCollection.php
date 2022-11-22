@@ -14,6 +14,10 @@ class TimingCollection extends ResourceCollection
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'elements' =>  parent::toArray($request),
+            'totalElements' => 0,
+            'currentPage' => 0,                        
+        ];
     }
 }
