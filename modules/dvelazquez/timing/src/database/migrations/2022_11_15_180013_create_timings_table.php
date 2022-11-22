@@ -22,6 +22,7 @@ class CreateTimingsTable extends Migration
             $table->unsignedInteger('customer_id');
             $table->unsignedInteger('type_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
